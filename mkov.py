@@ -19,17 +19,39 @@ with open('poemfodder.txt','r') as f:
 data = text_cleaner(content)
 
 generator = markovify.Text(data,state_size=1)
+r = random.randint(20,30)
+r2 = random.randint(30,40)
 
 def lines():
-    x = random.randint(30,50)
-    return generator.make_short_sentence(max_chars=x,tries=50)
+    return generator.make_short_sentence(max_chars=random.randint(25,50),tries=1000)
+
+def poem():
+    for i in range(random.randint(2,9)):
+        print(lines())
+    print('\r\r')
+    for i in range(2,3):
+        print(lines())
+    print('\r\r')
+    for i in range(2):
+        print(lines())
 
 print('\n')
-for i in range(4):
-    print(lines())
+poem()
 print('\n')
-print(lines())
-print('\n')
-for i in range(2):
-    print(lines())
-print('\n')
+
+
+
+
+# print('\n')
+# for i in range(6):
+#     print(lines())
+# print('\n')
+# print(breakline())
+# print('\n')
+# for i in range(random.randint(2,6)):
+#     print(lines())
+# print('\n')
+# for i in range(2):
+#     print(lines())
+# print('\n')
+
